@@ -1,0 +1,48 @@
+\documentclass[sigconf]{acmart}
+
+\usepackage{booktabs} % For formal tables
+
+\def\comment#1{{\color{blue}\textbf{Comment:~} #1}}
+
+
+% Copyright
+\setcopyright{none}
+%\setcopyright{acmcopyright}
+%\setcopyright{acmlicensed}
+%\setcopyright{rightsretained}
+%\setcopyright{usgov}
+%\setcopyright{usgovmixed}
+%\setcopyright{cagov}
+%\setcopyright{cagovmixed}
+
+\begin{document}
+\title{How to Not Lose Your Keys}
+\subtitle{Approaches to Managing Multiple Identities and Devices for Single Users}
+
+
+\author{Mark MacIntyre Wheatley}
+\affiliation{%
+  \institution{University of Waterloo}
+  \streetaddress{200 University Ave. W}
+  \city{Waterloo} 
+  \state{ON} 
+  \postcode{N2L 3G1}
+}
+\email{ms3macin@uwaterloo.ca}
+
+\begin{abstract}
+
+In today's day and age, the average computer user finds at their disposal a plethora of computing devices of various sizes, form factors and computing power, targeted at different aspects of the user's lifestyle. Indeed, it is not uncommon to find the average user in possession of at least two devices, namely, a computer and a smartphone. Additionally, we find new devices being released everyday: smart accessories, smart appliances and the ilk. The average user expects all their applications to work seamlessly across their devices. A challenge in security arises when the user needs to manage their multiple interconnected devices and their multiple identities for their applications. The devices usually share the user's cryptographic private key. This key sharing can often be insecure and expose the user to grave security concerns of theft and malware. Devices such as phones and watches are frequently removed or replaced. Also, the loss of a single device can compromise the security of the user and their remaining devices.\\
+This paper aims to provide an overview of recent developments in approaches to managing multiple devices and identites for single users. \comment{[list of names and some findings]}
+
+\end{abstract}
+
+
+\maketitle
+
+\input{MMI-body}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{MMI} 
+
+\end{document}
