@@ -1,10 +1,36 @@
 \documentclass[sigconf]{acmart}
 
+%=========================Packages==============================
 \usepackage{booktabs} % For formal tables
 \usepackage{enumitem}
 \usepackage{graphicx}
 \graphicspath{{images/}}
+\usepackage{balance}
 %\usepackage{cite}
+\usepackage{bbding}
+\usepackage{xifthen}
+
+%==========================MACROS==============================
+%margin comments
+\setlength{\marginparsep}{6pt}
+\setlength{\marginparwidth}{40pt}
+\setlength{\marginparpush}{5pt}
+\newcounter{mn}
+\setcounter{mn}{1}
+\newcommand{\superscript}[1]{\ensuremath{{}^{\textrm{\scriptsize #1}}}}
+\newcommand{\roughtext}[1]{\begin{color}{cyan}#1\end{color}}
+\newcommand{\mntext}[1]{\colorbox{cyan}{\begin{color}{black}#1\end{color}}}
+\newcommand{\mn}[2][]{{\tiny\superscript{\mntext{\arabic{mn}}}}\marginpar{\scriptsize{
+  \ifthenelse{\isempty{#1}}
+  {\mntext{\parbox{0.95\marginparwidth}{\superscript{\arabic{mn}}
+\raggedright{#2}}}}
+  {\mntext{\parbox{0.95\marginparwidth}{\superscript{\arabic{mn}}#1
+says: \raggedright{#2}}}}
+}}\stepcounter{mn}}
+
+%Use: \mn[NAME]{NOTE} -> NAME says NOTE
+%Use: \mn{NOTE} -> NOTE
+
 
 \def\comment#1{{\color{blue}\textbf{Comment:~} #1}}
 
@@ -22,8 +48,10 @@
 %Conference
 \acmConference[CS 658]{University of Waterloo}{July 2017}{University of Waterloo} 
 
+%========================LET"S BEGIN!==============================
+
 \begin{document}
-\title{How to Not Lose Your Keys}
+\title{Helping Johnny to Manage His Keys}
 \subtitle{Approaches to Managing Multiple Identities and Devices for Single Users}
 
 
@@ -39,8 +67,8 @@
 
 \begin{abstract}
 
-In today's day and age, the average computer user finds at their disposal a plethora of computing devices of various sizes, form factors and computing power, targeted at different aspects of the user's lifestyle. Indeed, it is not uncommon to find the average user in possession of at least two devices, namely, a computer and a smartphone. Additionally, we find new devices being released everyday: smart accessories, smart appliances and the ilk. The average user expects all their applications to work seamlessly across their devices. A challenge in security arises when the user needs to manage their multiple interconnected devices and their multiple identities for their applications.\\
-This paper aims to provide an overview of developments in approaches to managing multiple devices and identites for single users. \comment{[list of names and some findings]}
+In today's day and age, the average computer user finds at their disposal a plethora of computing devices of various sizes, form factors and computing power, targeted at different aspects of the user's lifestyle. Indeed, it is not uncommon to find the average user in possession of at least two devices, namely, a computer and a smartphone. Additionally, we find new devices being released everyday: smart accessories, smart appliances and the ilk. The average user expects all their applications to work seamlessly across their devices. A challenge in security arises when the user needs to manage their multiple interconnected devices and their multiple identities for their applications.
+This paper aims to provide an overview of developments in approaches to managing multiple devices and identites for single users. \mn{[list of names and some findings]}
 
 \end{abstract}
 
@@ -51,6 +79,7 @@ This paper aims to provide an overview of developments in approaches to managing
 
 
 \bibliographystyle{ACM-Reference-Format}
+\balance
 \bibliography{MMI} 
 
 \end{document}
